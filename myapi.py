@@ -8,14 +8,15 @@ import ppt_image as ii
 app = FastAPI()
 
 # Configure allowed origins
-# origins = [
-#     "http://localhost:3000",  # React development server
-#     "http://127.0.0.1:3000"  # Alternate localhost
-# ]
+origins = [
+    "https://presently-v1-0.vercel.app/",
+    "http://localhost:3000",  # React development server
+    "http://127.0.0.1:3000"  # Alternate localhost
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
